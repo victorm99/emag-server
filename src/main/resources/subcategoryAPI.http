@@ -1,0 +1,33 @@
+
+##############################################      ADD SUBCATEGORY     ##########################################
+POST localhost:9999/subcategories
+Content-Type: application/json
+
+{
+  "subCategoryName": "Disc",
+  "categoryName" : "DVD"
+}
+
+
+##############################################      EDIT SUBCATEGORY     ##########################################
+PUT localhost:9999/subcategories
+Content-Type: application/json
+
+{
+  "oldName": "Disc",
+  "newName": "Discs"
+}
+
+##############################################      FIND ALL SUBCATEGORIES BY CATEGORY   ##########################################
+GET localhost:9999/subcategories/1
+Content-Type: application/json
+
+
+
+##############################################      DELETE SUBCATEGORY     ##########################################
+DELETE localhost:9999/subcategories
+Content-Type: application/json
+
+{
+  "name": "dsfsad"
+}

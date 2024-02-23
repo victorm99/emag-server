@@ -1,0 +1,116 @@
+
+
+############################################################ REGISTER ########################################################
+
+### REGISTER 5###
+POST localhost:9999/users
+Content-Type: application/json
+
+{
+  "fullName" : "Aleksandar Todorov" ,
+  "password" : "123456789ABCdef!" ,
+  "confirmPassword" : "123456789ABCdef!" ,
+  "admin" : true ,
+  "email" : "attodorov@yahoo.com"
+}
+
+
+### REGISTER 3###
+POST localhost:9999/users
+Content-Type: application/json
+
+ {
+ "fullName" : "Mihail Shishkov" ,
+ "password" : "abcdsA1526!" ,
+ "confirmPassword" : "abcdsA1526!" ,
+ "email" : "misho_shisho@abv.bg" ,
+ "admin" : true
+ }
+
+
+### REGISTER 4###
+POST localhost:9999/users
+Content-Type: application/json
+
+{
+  "fullName" : "Kroasan Aleksiev" ,
+  "password" : "abcdsA1526!" ,
+  "confirmPassword" : "abcdsA1526!" ,
+  "email" : "kroasan@abv.bg" ,
+  "admin" : true
+}
+
+
+################################################## GET BY ID #######################################################
+ GET localhost:9999/users/1
+
+################################################### LOGIN ##########################################################
+ POST localhost:9999/users/login
+Content-Type: application/json
+
+{
+  "email" : "misho_shisho@abv.bg" ,
+  "password" : "abcdsA1526!"
+}
+
+###
+POST localhost:9999/users/login
+Content-Type: application/json
+
+{
+"email" : "misho_shisho@abv.bg" ,
+"password" : "abcdsA1526!"
+}
+
+################################################### LOGIN 2 ##########################################################
+ POST localhost:9999/users/login
+Content-Type: application/json
+
+{
+  "email" : "kroasan@abv.bg" ,
+  "password" : "abcdsA1526!"
+}
+################################################## LOGOUT #########################################################
+ POST localhost:9999/users/logout
+
+############################################## CHANGE USER PASS ###################################################
+PUT localhost:9999/users/9/pass
+Content-Type: application/json
+
+{
+  "oldPassword" : "15186994aT!" ,
+  "newPassword" : "15186994aT!1520" ,
+  "confirmNewPassword" : "15186994aT!1520"
+}
+
+############################################# CHANGE USER DATA ####################################################
+PUT localhost:9999/users/4
+Content-Type: application/json
+
+{
+  "mobilePhone" : "+359887059865" ,
+  "address" : {
+    "address" : "Nqkude tam po-nablizo ada " ,
+    "description": "Malko vlqvo da da "
+  },
+  "nickname" : "Belqta",
+  "gender" : "Male",
+  "birthDate" : "1994-04-23"
+}
+
+
+############################################# UPLOAD IMAGE ####################################################
+POST localhost:9999/users/1/image
+
+################################################### SUBSCRIBE ##########################################################
+ POST localhost:9999/users/subscribe
+
+################################################### UNSUBSCRIBE ##########################################################
+ POST localhost:9999/users/unsubscribe
+
+
+
+
+
+
+

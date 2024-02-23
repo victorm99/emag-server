@@ -1,0 +1,98 @@
+
+#####################################################      ADD PRODUCT        ######################################
+POST http://localhost:9999/products
+Content-Type: application/json
+
+{
+ "name" : "DVD DISC",
+  "subCategoryId" : 1 ,
+  "brand" : "DVD" ,
+  "model" : "ROM" ,
+  "price" : 5,
+  "quantity" : 2,
+  "description" : "DVD DiSC",
+  "warrantyMonths" : 15
+}
+
+#####################################################      EDIT PRODUCT        ######################################
+PUT http://localhost:9999/products/3
+Content-Type: application/json
+
+{
+ "name" : "Some product",
+  "subCategoryId" : 1 ,
+  "brand" : "some brand" ,
+  "model" : "some model" ,
+  "price" : 0,
+  "quantity" : 2,
+  "description" : "Some stupid product",
+  "warrantyMonths" : 15
+}
+
+#################################################      GET PRODUCT BY ID        ######################################
+GET http://localhost:9999/products/1
+
+#################################################      DELETE PRODUCT BY ID        ###################################
+DELETE http://localhost:9999/products/16
+
+#################################################      ADD PRODUCT TO FAV        ###################################
+POST http://localhost:9999/products/2/fav
+
+#################################################      REMOVE PRODUCT FROM FAV        ##############################
+DELETE http://localhost:9999/products/2/fav
+
+#####################################################      ADD DISCOUNT        ######################################
+POST http://localhost:9999/discounts/1
+Content-Type: application/json
+
+{
+  "discountPercent" : 30,
+  "startDate" : "2022-02-25T16:42:00.000+00:00",
+  "expireDate" : "2022-06-26T16:43:00.000+00:00"
+}
+
+###########################################      GET ALL PRODUCTS BY SUBCATEGORY        #############################
+GET http://localhost:9999/subcategories/1/products
+
+###########################################     GET ALL PRODUCTS BY SUBCATEGORY SORTED  #############################
+GET http://localhost:9999/subcategories/products/price_desc
+
+###########################################      SEARCH PRODUCTS BY KEYWORD        #############################
+GET http://localhost:9999/products/search/prod
+
+###########################################      GET ALL FAVOURITE PRODUCTS        #############################
+GET http://localhost:9999/products/fav
+
+################################################   GET PRODUCT WHERE PRICE IS BETWEEN ######################################
+GET http://localhost:9999/subcategories/products/40/60
+
+################################################   FILTER   ######################################
+POST http://localhost:9999/products/filter
+Content-Type: application/json
+
+{
+  "subcategoryId" : 2 ,
+  "searchKeyword" : "product" ,
+  "brand" : "so",
+  "model" : "some",
+  "maxPrice" : 400000 ,
+  "minPrice" : 200 ,
+  "discountedOnly" : false ,
+  "orderByPrice" : false ,
+  "sortDesc" : true ,
+  "productsPerPage" : 80 ,
+  "pageNumber" : 1
+}
+###
+
+    "subcategoryId" : 8 ,
+    "searchKeyword" : "product" ,
+"brand" : "so212",
+  "model" : "some",
+    "maxPrice" : 600 ,
+    "minPrice" : 200 ,
+    "discountedOnly" : false ,
+    "orderByPrice" : true ,
+    "sortDesc" : false ,
+    "productsPerPage" : 80 ,
+    "pageNumber" : 1

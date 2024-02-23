@@ -1,0 +1,28 @@
+
+##############################################      ADD CATEGORY     ##########################################
+POST localhost:9999/categories
+Content-Type: application/json
+
+{
+  "name": "DVD"
+}
+
+
+##############################################      EDIT CATEGORY     ##########################################
+PUT localhost:9999/categories
+Content-Type: application/json
+
+{
+  "oldName": "DVDs",
+  "newName": "DVD"
+}
+
+##############################################      FIND ALL  CATEGORIES    ##########################################
+GET localhost:9999/categories
+Content-Type: application/json
+
+##############################################      DELETE CATEGORY     ##########################################
+DELETE localhost:9999/categories
+Content-Type: application/json
+
+

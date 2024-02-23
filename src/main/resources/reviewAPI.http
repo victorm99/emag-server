@@ -1,0 +1,39 @@
+
+##############################################      ADD REVIEW     ##########################################
+POST localhost:9999/review
+Content-Type: application/json
+
+{
+  "productId": 6,
+  "title" : "neshtoo",
+  "description" : "pak neshtoo",
+  "rating" : 4
+}
+
+
+##############################################      EDIT REVIEW     ##########################################
+PUT localhost:9999/review
+Content-Type: application/json
+
+{
+  "productId": 1,
+  "title" : "neshto neshto",
+  "description" : "pak neshto neshto",
+  "rating" : 2
+}
+
+##############################################      GET ALL REVIEWS FOR PRODUCT   ##########################################
+GET localhost:9999/product/1/reviews
+Content-Type: application/json
+
+##############################################      DELETE REVIEW     ##########################################
+DELETE localhost:9999/review/1
+Content-Type: application/json
+
+##############################################      GET ALL REVIEWS BY USER   ##########################################
+GET localhost:9999/users/5/review
+Content-Type: application/json
+
+##############################################      LIKE REVIEW   ##########################################
+POST localhost:9999/review/1/like
+Content-Type: application/json

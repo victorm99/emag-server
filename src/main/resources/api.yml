@@ -1,0 +1,4 @@
+app:
+  name: EMAG
+  server:
+    port:9999
